@@ -9,31 +9,72 @@
 import UIKit
 
 class MenuLookViewController: UIViewController {
-    let foodToShow = APICLient()
+    
     @IBOutlet weak var foodCategoryTableView: UITableView!
-    var timer = Timer()
+    
+    private let apiClient = APICLient()
+    var foodCatalog: FoodCatalog?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
+        fetchMenu()
     }
+    
+    private func fetchMenu() {
+        apiClient.fetchMenu { [weak self] foodCatalog, error in
+            if let error = error {
+                if error == .parsingError {
+                    self?.showMessage("Ошибка парсинга данных")
+                }
+                return
+            }
+            
+            self?.foodCatalog = foodCatalog
+            self?.foodCategoryTableView.reloadData()
+        }
+    }
+    
+    private func showMessage(_ message: String) {
+        let alertViewController = UIAlertController(title: "Triton", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alertViewController.addAction(okAction)
+        present(alertViewController, animated: true)
+    }
+    
+    
 }
 
 
 extension MenuLookViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return foodCatalog?.foodCategories.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodToShow.foodToShow?.responseObj.foodCatalog.foodCategories.count ?? 0
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let category = foodCatalog?.foodCategories[section] else { fatalError("KEK") }
+        return category.categoryName
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         
-        cell.setup(for: (foodToShow.foodToShow?.responseObj.foodCatalog.foodCategories[indexPath.row])!)
+        cell.onProductTap = { [weak self] product in
+            self?.showMessage(product.foodName)
+        }
+        
+        guard let category = foodCatalog?.foodCategories[indexPath.section] else { fatalError("KEK") }
+        cell.setup(for: category)
+        
         return cell
     }
-    
-    @objc func timerAction() {
-        self.foodCategoryTableView.reloadData()
-    }
+
 }

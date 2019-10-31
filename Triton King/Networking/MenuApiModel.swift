@@ -29,14 +29,14 @@ struct FoodResponse: Codable {
 }
 
 struct FoodCatalog: Codable {
-    let foodCategories: [FoodCategories]
+    let foodCategories: [FoodCategory]
 
     private enum CodingKeys: String, CodingKey {
         case foodCategories = "categories"
     }
 }
 
-struct FoodCategories: Codable {
+struct FoodCategory: Codable {
     let categoryId: Int
     let categoryName: String
     let imageCommonSizePath: String

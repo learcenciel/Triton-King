@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,24 +20,63 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="4Gu-b5-HWL" rowHeight="165" style="IBUITableViewCellStyleDefault" id="beT-jw-Wr8" customClass="CategoryCell" customModule="Triton_King" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="165" id="beT-jw-Wr8" customClass="CategoryCell" customModule="Triton_King" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beT-jw-Wr8" id="ZWz-Sb-aL5">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Gu-b5-HWL">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="165"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FmE-df-gvI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L18-Bt-brv">
+                                                        <size key="itemSize" width="100" height="105"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="dhp-i2-DmH" customClass="ProductCell" customModule="Triton_King" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="s4o-tI-cyT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRK-iB-Zx0">
+                                                                        <rect key="frame" x="37" y="44" width="26.5" height="12"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="jRK-iB-Zx0" firstAttribute="centerY" secondItem="s4o-tI-cyT" secondAttribute="centerY" id="x8M-Ka-rHY"/>
+                                                                    <constraint firstItem="jRK-iB-Zx0" firstAttribute="centerX" secondItem="s4o-tI-cyT" secondAttribute="centerX" id="ymZ-D3-gh1"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="100" height="100"/>
+                                                            <connections>
+                                                                <outlet property="nameLabel" destination="jRK-iB-Zx0" id="g14-Jv-014"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="beT-jw-Wr8" id="AXZ-bL-IG8"/>
+                                                        <outlet property="delegate" destination="beT-jw-Wr8" id="dUw-Ye-oa3"/>
+                                                    </connections>
+                                                </collectionView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FmE-df-gvI" firstAttribute="leading" secondItem="ZWz-Sb-aL5" secondAttribute="leading" id="I61-AY-Bnd"/>
+                                                <constraint firstItem="FmE-df-gvI" firstAttribute="top" secondItem="ZWz-Sb-aL5" secondAttribute="top" id="ZuQ-lJ-yIB"/>
+                                                <constraint firstAttribute="trailing" secondItem="FmE-df-gvI" secondAttribute="trailing" id="dyT-aN-5Wm"/>
+                                                <constraint firstAttribute="bottom" secondItem="FmE-df-gvI" secondAttribute="bottom" id="ix8-Ii-o2a"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="foodInfoLabel" destination="4Gu-b5-HWL" id="Dhk-oj-pRx"/>
+                                            <outlet property="collectionView" destination="FmE-df-gvI" id="Nvh-rp-RUJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
