@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h4g-ls-BhJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu Look View Controller-->
+        <scene sceneID="2IK-vV-ygi">
+            <objects>
+                <viewController id="xOP-hF-yya" customClass="MenuLookViewController" customModule="Triton_King" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tKc-dZ-rI2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-Zv-vJQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="4Gu-b5-HWL" rowHeight="165" style="IBUITableViewCellStyleDefault" id="beT-jw-Wr8" customClass="CategoryCell" customModule="Triton_King" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="165"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beT-jw-Wr8" id="ZWz-Sb-aL5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Gu-b5-HWL">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="165"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodInfoLabel" destination="4Gu-b5-HWL" id="Dhk-oj-pRx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xOP-hF-yya" id="h6h-o1-Kv4"/>
+                                    <outlet property="delegate" destination="xOP-hF-yya" id="Dgd-OV-EHY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vRj-Zv-vJQ" firstAttribute="leading" secondItem="CFj-fw-5Wm" secondAttribute="leading" id="9co-zy-Bwx"/>
+                            <constraint firstItem="CFj-fw-5Wm" firstAttribute="bottom" secondItem="vRj-Zv-vJQ" secondAttribute="bottom" id="JSK-T6-j3X"/>
+                            <constraint firstItem="vRj-Zv-vJQ" firstAttribute="top" secondItem="CFj-fw-5Wm" secondAttribute="top" id="WTx-M1-t7g"/>
+                            <constraint firstItem="CFj-fw-5Wm" firstAttribute="trailing" secondItem="vRj-Zv-vJQ" secondAttribute="trailing" id="fZY-gU-GVR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CFj-fw-5Wm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Z1i-z1-qFx"/>
+                    <connections>
+                        <outlet property="foodCategoryTableView" destination="vRj-Zv-vJQ" id="J66-Yj-cL9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEw-aH-Dfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082.608695652174" y="-176.11607142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ajV-dm-zWb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="h4g-ls-BhJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fkK-aB-D6j">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xOP-hF-yya" kind="relationship" relationship="viewControllers" id="fq3-Im-OW9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPZ-WC-J9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.91304347826087" y="-176.11607142857142"/>
+        </scene>
+    </scenes>
+</document>
