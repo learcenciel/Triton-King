@@ -8,13 +8,34 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 class MapPlacesViewController: UIViewController {
     private let apiClient = APICLient()
     var cityResponse: ResponseObjCity?
     
+    var locationManager: CLLocationManager!
+    var mapView: GMSMapView!
+    var zoomLevel: Float = 15.0
+    var camera: GMSCameraPosition!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.distanceFilter = 50
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+        
+        camera = GMSCameraPosition(latitude: 56.5010397, longitude: 84.9924506, zoom: 4.0)
+        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        mapView.delegate = self
+        view = mapView
         
         fetchCityList()
     }
@@ -28,7 +49,6 @@ class MapPlacesViewController: UIViewController {
                 return
             }
             self?.cityResponse = cityResponse
-            //print(self?.cityResponse?.responseObj.cityArray[0].restaurantLongitute)
             self?.showMarkers(for: (self?.cityResponse?.responseObj.cityArray)!)
         }
     }
@@ -41,10 +61,6 @@ class MapPlacesViewController: UIViewController {
     }
     
     func showMarkers(for cityInfo: [CityInfo]) {
-        let camera = GMSCameraPosition(latitude: 56.5010397, longitude: 84.9924506, zoom: 4.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
-        
         var legitCityList: [CityInfo] = [CityInfo]()
         let curCoord = CLLocation(latitude: 56.4977, longitude: 84.9744)
         
@@ -61,8 +77,48 @@ class MapPlacesViewController: UIViewController {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: city.restaurantLatitude, longitude: city.restaurantLongitute)
             marker.title = city.restaurantName
-            marker.snippet = String(city.restaurantId)
+            marker.snippet = city.restaurantEmail
             marker.map = mapView
+            marker.icon = UIImage(named: "marker")
         }
+    }
+}
+
+extension MapPlacesViewController: CLLocationManagerDelegate, GMSMapViewDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location: CLLocation = locations.last!
+        print("Location: \(location)")
+        
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
+        
+        mapView.animate(to: camera)
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .restricted:
+            print("Location access was restricted.")
+        case .denied:
+            print("User denied access to location.")
+            mapView.isHidden = false
+        case .notDetermined:
+            print("Location status not determined.")
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            print("Location status is OK.")
+        @unknown default:
+            fatalError()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationManager.stopUpdatingLocation()
+        print("Error: \(error)")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        print(marker.snippet)
+        return false
     }
 }

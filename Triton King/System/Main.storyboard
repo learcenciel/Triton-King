@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map Places View Controller-->
+        <!--КАРТА-->
         <scene sceneID="MuQ-OC-uia">
             <objects>
                 <viewController id="3ZQ-oQ-xgu" customClass="MapPlacesViewController" customModule="Triton_King" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OMA-dF-dVk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="7Qn-in-7LG"/>
+                    <tabBarItem key="tabBarItem" title="КАРТА" image="map" selectedImage="map" id="7Qn-in-7LG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAr-gO-cvq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1060" y="-871"/>
         </scene>
-        <!--Menu Look View Controller-->
+        <!--МЕНЮ-->
         <scene sceneID="2IK-vV-ygi">
             <objects>
                 <viewController id="xOP-hF-yya" customClass="MenuLookViewController" customModule="Triton_King" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CFj-fw-5Wm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Z1i-z1-qFx"/>
+                    <tabBarItem key="tabBarItem" title="МЕНЮ" image="menu" selectedImage="menu" id="Z1i-z1-qFx"/>
                     <connections>
                         <outlet property="foodCategoryTableView" destination="vRj-Zv-vJQ" id="J66-Yj-cL9"/>
                     </connections>
@@ -140,4 +140,8 @@
             <point key="canvasLocation" x="173.91304347826087" y="-176.11607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="30" height="30"/>
+        <image name="menu" width="30" height="30"/>
+    </resources>
 </document>

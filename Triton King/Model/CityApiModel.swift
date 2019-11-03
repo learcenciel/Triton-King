@@ -35,7 +35,7 @@ struct CityInfo: Codable {
     let restaurantLongitute: Double
     let restaurantLatitude: Double
     //let restaurantPhoneNumber: String
-    //let restaurantEmail: String
+    let restaurantEmail: String
     //let restaurantDeliveryZone: [Dictionary<Double, Double>]
     
     private enum CodingKeys: String, CodingKey {
@@ -45,6 +45,6 @@ struct CityInfo: Codable {
         case restaurantLongitute = "longitude"
         case restaurantLatitude = "latitude"
         //case restaurantPhoneNumber = "phone"
-        //case restaurantEmail = "email"
+        case restaurantEmail = "email"
 }
 }
