@@ -14,6 +14,7 @@ class CategoryCell: UITableViewCell {
     var onProductTap: ((FoodInfo) -> Void)?
     private var foodInfos: [FoodInfo] = []
     
+    //collectionview cfg
     override func awakeFromNib() {
         super.awakeFromNib()
         let layout = UICollectionViewFlowLayout()

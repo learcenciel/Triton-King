@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		208716DA236B481700034C8F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208716D9236B481700034C8F /* Errors.swift */; };
-		208716DC236B506B00034C8F /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208716DB236B506B00034C8F /* SectionHeaderView.swift */; };
 		208716DE236B583600034C8F /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208716DD236B583600034C8F /* ProductCell.swift */; };
+		2089DF70236C588E0015870A /* MapPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2089DF6F236C588E0015870A /* MapPlacesViewController.swift */; };
+		20B6C325236D4BA900ED3631 /* CityApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6C324236D4BA900ED3631 /* CityApiModel.swift */; };
+		20B6C327236D4F2E00ED3631 /* BurgerKingApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6C326236D4F2E00ED3631 /* BurgerKingApi.swift */; };
 		20B7548B236AA72500A0C345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7548A236AA72500A0C345 /* AppDelegate.swift */; };
 		20B75494236AA72700A0C345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B75493236AA72700A0C345 /* Assets.xcassets */; };
 		20B754A7236AACC900A0C345 /* MenuLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B754A6236AACC900A0C345 /* MenuLookViewController.swift */; };
@@ -21,8 +23,10 @@
 
 /* Begin PBXFileReference section */
 		208716D9236B481700034C8F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		208716DB236B506B00034C8F /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		208716DD236B583600034C8F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		2089DF6F236C588E0015870A /* MapPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlacesViewController.swift; sourceTree = "<group>"; };
+		20B6C324236D4BA900ED3631 /* CityApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityApiModel.swift; sourceTree = "<group>"; };
+		20B6C326236D4F2E00ED3631 /* BurgerKingApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerKingApi.swift; sourceTree = "<group>"; };
 		20B75487236AA72500A0C345 /* Triton King.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Triton King.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B7548A236AA72500A0C345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		20B75493236AA72700A0C345 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		20B754AA236AB2EF00A0C345 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		20B754AC236AB40700A0C345 /* MenuApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuApiModel.swift; sourceTree = "<group>"; };
 		20B754AE236AC32B00A0C345 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		AC6AA79922A55A07FE14E6FE /* Pods-Triton King.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Triton King.release.xcconfig"; path = "Target Support Files/Pods-Triton King/Pods-Triton King.release.xcconfig"; sourceTree = "<group>"; };
+		B54C06C77F7725963C4A7E88 /* Pods-Triton King.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Triton King.debug.xcconfig"; path = "Target Support Files/Pods-Triton King/Pods-Triton King.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,8 @@
 			children = (
 				20B75489236AA72500A0C345 /* Triton King */,
 				20B75488236AA72500A0C345 /* Products */,
+				2980F4A48CB122B1F3C4E0FE /* Pods */,
+				B1F4BF847B8964AF2BB9721A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				20B754AE236AC32B00A0C345 /* CategoryCell.swift */,
-				208716DB236B506B00034C8F /* SectionHeaderView.swift */,
 				208716DD236B583600034C8F /* ProductCell.swift */,
 			);
 			path = View;
@@ -87,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				20B754A6236AACC900A0C345 /* MenuLookViewController.swift */,
+				2089DF6F236C588E0015870A /* MapPlacesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -94,6 +102,8 @@
 		20B754A1236AA77A00A0C345 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				20B754AC236AB40700A0C345 /* MenuApiModel.swift */,
+				20B6C324236D4BA900ED3631 /* CityApiModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,10 +123,26 @@
 			isa = PBXGroup;
 			children = (
 				20B754AA236AB2EF00A0C345 /* APIClient.swift */,
-				20B754AC236AB40700A0C345 /* MenuApiModel.swift */,
 				208716D9236B481700034C8F /* Errors.swift */,
+				20B6C326236D4F2E00ED3631 /* BurgerKingApi.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		2980F4A48CB122B1F3C4E0FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B54C06C77F7725963C4A7E88 /* Pods-Triton King.debug.xcconfig */,
+				AC6AA79922A55A07FE14E6FE /* Pods-Triton King.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B1F4BF847B8964AF2BB9721A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20B7549B236AA72700A0C345 /* Build configuration list for PBXNativeTarget "Triton King" */;
 			buildPhases = (
+				17823937581A1B300DE9DC19 /* [CP] Check Pods Manifest.lock */,
 				20B75483236AA72500A0C345 /* Sources */,
 				20B75484236AA72500A0C345 /* Frameworks */,
 				20B75485236AA72500A0C345 /* Resources */,
+				78052AFB6E794F1AB3E7AB47 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +212,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17823937581A1B300DE9DC19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Triton King-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78052AFB6E794F1AB3E7AB47 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Triton King/Pods-Triton King-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Triton King/Pods-Triton King-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Triton King/Pods-Triton King-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		20B75483236AA72500A0C345 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -193,9 +263,11 @@
 				20B754AD236AB40700A0C345 /* MenuApiModel.swift in Sources */,
 				20B754A7236AACC900A0C345 /* MenuLookViewController.swift in Sources */,
 				20B754AB236AB2EF00A0C345 /* APIClient.swift in Sources */,
-				208716DC236B506B00034C8F /* SectionHeaderView.swift in Sources */,
 				208716DE236B583600034C8F /* ProductCell.swift in Sources */,
+				20B6C325236D4BA900ED3631 /* CityApiModel.swift in Sources */,
+				2089DF70236C588E0015870A /* MapPlacesViewController.swift in Sources */,
 				208716DA236B481700034C8F /* Errors.swift in Sources */,
+				20B6C327236D4F2E00ED3631 /* BurgerKingApi.swift in Sources */,
 				20B754AF236AC32B00A0C345 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,8 +391,10 @@
 		};
 		20B7549C236AA72700A0C345 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54C06C77F7725963C4A7E88 /* Pods-Triton King.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8W748977J;
 				INFOPLIST_FILE = "Triton King/Info.plist";
@@ -330,6 +404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pwr.Triton-King";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,8 +412,10 @@
 		};
 		20B7549D236AA72700A0C345 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC6AA79922A55A07FE14E6FE /* Pods-Triton King.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8W748977J;
 				INFOPLIST_FILE = "Triton King/Info.plist";
@@ -348,6 +425,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pwr.Triton-King";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
