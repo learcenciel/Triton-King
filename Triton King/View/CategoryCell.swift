@@ -43,7 +43,10 @@ extension CategoryCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        cell.nameLabel.text = foodInfos[indexPath.row].foodName
+       // cell.nameLabel.text = foodInfos[indexPath.row].foodName
+        
+        cell.setup(for: foodInfos[indexPath.row])
+        
         return cell
     }
 }

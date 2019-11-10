@@ -7,4 +7,5 @@ target 'Triton King' do
   # Pods for Triton King
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Kingfisher'
 end

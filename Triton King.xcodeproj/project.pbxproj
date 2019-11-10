@@ -19,9 +19,11 @@
 		20B754AB236AB2EF00A0C345 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B754AA236AB2EF00A0C345 /* APIClient.swift */; };
 		20B754AD236AB40700A0C345 /* MenuApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B754AC236AB40700A0C345 /* MenuApiModel.swift */; };
 		20B754AF236AC32B00A0C345 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B754AE236AC32B00A0C345 /* CategoryCell.swift */; };
+		976FB9631C296561FBEA577A /* Pods_Triton_King.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080B433060F259AC736C0E7D /* Pods_Triton_King.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080B433060F259AC736C0E7D /* Pods_Triton_King.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Triton_King.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		208716D9236B481700034C8F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		208716DD236B583600034C8F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		2089DF6F236C588E0015870A /* MapPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlacesViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976FB9631C296561FBEA577A /* Pods_Triton_King.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +144,7 @@
 		B1F4BF847B8964AF2BB9721A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				080B433060F259AC736C0E7D /* Pods_Triton_King.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,6 +161,7 @@
 				20B75484236AA72500A0C345 /* Frameworks */,
 				20B75485236AA72500A0C345 /* Resources */,
 				78052AFB6E794F1AB3E7AB47 /* [CP] Copy Pods Resources */,
+				70563C9ACD66CFEC6EF9FEDC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +238,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70563C9ACD66CFEC6EF9FEDC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Triton King/Pods-Triton King-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Triton King/Pods-Triton King-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Triton King/Pods-Triton King-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		78052AFB6E794F1AB3E7AB47 /* [CP] Copy Pods Resources */ = {

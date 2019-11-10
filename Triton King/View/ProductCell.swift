@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductCell: UICollectionViewCell {
+    @IBOutlet weak var foodImageView: UIImageView!
+    @IBOutlet weak var foodNameLabel: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
+    func setup(for foodInfo: FoodInfo) {
+        let url = URL(string: foodInfo.imageCommonSizePath ?? "")
+        
+        foodNameLabel.text = foodInfo.foodName
+        foodImageView.kf.setImage(with: url)
+    }
 }

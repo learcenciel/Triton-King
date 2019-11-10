@@ -17,6 +17,7 @@ class MenuLookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchMenu()
     }
     
@@ -40,8 +41,6 @@ class MenuLookViewController: UIViewController {
         alertViewController.addAction(okAction)
         present(alertViewController, animated: true)
     }
-    
-    
 }
 
 
@@ -61,7 +60,7 @@ extension MenuLookViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
+        return 120.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -60,7 +60,7 @@ struct FoodInfo: Codable {
     private enum CodingKeys: String, CodingKey {
         case foodId = "id"
         case foodName = "name"
-        case imageCommonSizePath = "image"
+        case imageCommonSizePath = "image_128"
         case foodDescription = "description"
         case foodMaxCount = "max_count"
     }
