@@ -118,7 +118,7 @@ extension MapPlacesViewController: CLLocationManagerDelegate, GMSMapViewDelegate
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print(marker.snippet)
+        //print(marker.snippet)
         return false
     }
 }

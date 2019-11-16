@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		206BAB602379750B002F8BCF /* FoodCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206BAB5F2379750B002F8BCF /* FoodCheckViewController.swift */; };
 		208716DA236B481700034C8F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208716D9236B481700034C8F /* Errors.swift */; };
 		208716DE236B583600034C8F /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208716DD236B583600034C8F /* ProductCell.swift */; };
 		2089DF70236C588E0015870A /* MapPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2089DF6F236C588E0015870A /* MapPlacesViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		080B433060F259AC736C0E7D /* Pods_Triton_King.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Triton_King.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		206BAB5F2379750B002F8BCF /* FoodCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCheckViewController.swift; sourceTree = "<group>"; };
 		208716D9236B481700034C8F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		208716DD236B583600034C8F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		2089DF6F236C588E0015870A /* MapPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlacesViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				20B754A6236AACC900A0C345 /* MenuLookViewController.swift */,
 				2089DF6F236C588E0015870A /* MapPlacesViewController.swift */,
+				206BAB5F2379750B002F8BCF /* FoodCheckViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				20B7548B236AA72500A0C345 /* AppDelegate.swift in Sources */,
 				20B754AD236AB40700A0C345 /* MenuApiModel.swift in Sources */,
 				20B754A7236AACC900A0C345 /* MenuLookViewController.swift in Sources */,
+				206BAB602379750B002F8BCF /* FoodCheckViewController.swift in Sources */,
 				20B754AB236AB2EF00A0C345 /* APIClient.swift in Sources */,
 				208716DE236B583600034C8F /* ProductCell.swift in Sources */,
 				20B6C325236D4BA900ED3631 /* CityApiModel.swift in Sources */,
